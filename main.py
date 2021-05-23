@@ -63,6 +63,47 @@ sandwich = [
     }
 ]
 
+#opciones de cupon
+cupon = [
+    {
+        'type': 'expand',
+        'name': 'porcentaje',
+        'message': 'Seleccione el porcentaje del cupon',
+        'choices': [
+            {
+                'key': '0',
+                'name': 'Ninguno',
+                'value': 0
+            },
+            {
+                'key': '1',
+                'name': '10%',
+                'value': 1
+            },
+            {
+                'key': '2',
+                'name': '20%',
+                'value': 2
+            },
+            {
+                'key': '3',
+                'name': '30%',
+                'value': 3
+            },
+            {
+                'key': '4',
+                'name': '40%',
+                'value': 4
+            },
+            {
+                'key': '5',
+                'name': '50%',
+                'value': 5
+            }
+
+        ]
+    }
+]
 
 keepGoing = [
     {
@@ -105,9 +146,37 @@ while True:
     print("******************************")
 
 
+while True:
+    print()
+    print("Opciones:")
+    print("Porcentajes: Ninguro ( 0 ) 10% ( 1 ) 20% ( 2 ) 30% ( 3 ) 40% ( 4 ) 50% ( 5 ):")
+    cuponPropertys = prompt(cupon)
+    
+    shouldKeepGoing = prompt(keepGoing)['keepGoing']
+    if not shouldKeepGoing:
+        break
+    print("******************************")
+
+
 total = 0
 for sandwich in sandwichList:
     total += sandwich.getPrice()
+
+
+if cuponPropertys['porcentaje'] == 1:
+    total = total-(total*0.1)
+
+if cuponPropertys['porcentaje'] == 2:
+    total = total-(total*0.2) 
+
+if cuponPropertys['porcentaje'] == 3:
+    total = total-(total*0.3)
+
+if cuponPropertys['porcentaje'] == 4:
+    total = total-(total*0.4)
+
+if cuponPropertys['porcentaje'] == 5:
+    total = total-(total*0.5)
 
 
 print(f"el pedido tiene un total de {sandwichCounter} sandwiches. Y un monto total de {total}")
