@@ -1,5 +1,6 @@
 #coding=utf-8
-from Ingrediente import Ingrediente
+from .Ingrediente import Ingrediente
+import itertools
 
 class Sandwich:
 
@@ -44,10 +45,31 @@ class Sandwich:
         self.ingredientes_adicionales.append(self.ingredientes_adicionales_base[ingrediente_adicional])
         self.precio = self.ingredientes_adicionales[ingrediente_adicional].getPrecio()
 
+    def agregarIngredientes(self, ingredientes):
+        for ingrediente in ingredientes:
+            nuevoIngrediente = self.__searchIngredient(ingrediente)
+            self.ingredientes_adicionales.append( nuevoIngrediente )
+
+
     def getIngredientesAdicionales(self):
         print("Ingredientes adicionales: \n")
         for ingrediente in self.ingredientes_adicionales:
-            print(ingrediente.getNombre + ' - ' + ingrediente.getPrecio)
+            print(ingrediente.getNombre() + ' - ' + str(ingrediente.getPrecio()) )
 
     def getTipoSandwich(self):
         print('Tipo de sandwich: ' + self.tipo + '\n')
+
+
+    def __searchIngredient(self, ingredientName):
+        for ingredient in self.ingredientes_adicionales_base:
+            if (ingredient.getNombre() == ingredientName ):
+                return ingredient
+
+
+    def getPrice(self):
+        totalIngredients = 0
+        for ingredient in self.ingredientes_adicionales:
+            totalIngredients += ingredient.getPrecio()
+
+        return self.precio + totalIngredients        
+        
