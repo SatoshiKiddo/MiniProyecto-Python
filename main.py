@@ -79,27 +79,27 @@ cupon = [
             {
                 'key': '1',
                 'name': '10%',
-                'value': 1
+                'value': 10
             },
             {
                 'key': '2',
                 'name': '20%',
-                'value': 2
+                'value': 20
             },
             {
                 'key': '3',
                 'name': '30%',
-                'value': 3
+                'value': 30
             },
             {
                 'key': '4',
                 'name': '40%',
-                'value': 4
+                'value': 40
             },
             {
                 'key': '5',
                 'name': '50%',
-                'value': 5
+                'value': 50
             }
 
         ]
@@ -198,22 +198,22 @@ for sandwich in sandwichList:
 totalSinAdicionales = total
 
 
-if cuponPropertys['porcentaje'] == 1:
+if cuponPropertys['porcentaje'] == 10:
     total = total-(total*0.1)
 
-if cuponPropertys['porcentaje'] == 2:
+if cuponPropertys['porcentaje'] == 20:
     total = total-(total*0.2) 
 
-if cuponPropertys['porcentaje'] == 3:
+if cuponPropertys['porcentaje'] == 30:
     total = total-(total*0.3)
 
-if cuponPropertys['porcentaje'] == 4:
+if cuponPropertys['porcentaje'] == 40:
     total = total-(total*0.4)
 
-if cuponPropertys['porcentaje'] == 5:
+if cuponPropertys['porcentaje'] == 50:
     total = total-(total*0.5)
 
-if deliveryPropertys['delivery'] == 'y':
+if deliveryPropertys['delivery'] == 'Si':
     empaque = 10*sandwichCounter
     total += empaque    
 
@@ -222,7 +222,7 @@ print("-------------------------------------------------------")
 print("|                  SANDWICHES UCAB                    |")
 print("-------------------------------------------------------")
 print(f"No. de sandwiches {sandwichCounter}")
-print(f"Descuento {cuponPropertys['porcentaje']}0%")
+print(f"Descuento {cuponPropertys['porcentaje']}%")
 print(f"Cobro adicional por empaque para delivery.......${empaque}")
 print(f"Monto sin descuentos ni adicionales ............${totalSinAdicionales}")
 print(f"Monto total ....................................${total}")
