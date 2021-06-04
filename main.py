@@ -131,11 +131,19 @@ keepGoing = [
     {
         'type': 'confirm',
         'name': 'keepGoing',
-        'message': 'Desea Continuar',
+        'message': 'Agregar otro sandwich',
         'default': True,
     },
 ]
 
+keepGoing2 = [
+    {
+        'type': 'confirm',
+        'name': 'keepGoing2',
+        'message': 'Regresar',
+        'default': True,
+    },
+]
 
 sandwichList = []
 sandwichCounter = 0
@@ -183,7 +191,7 @@ while True:
     print("Delivery:")
     deliveryPropertys = prompt(delivery)
     
-    shouldKeepGoing = prompt(keepGoing)['keepGoing']
+    shouldKeepGoing = prompt(keepGoing2)['keepGoing2']
     if not shouldKeepGoing:
         break
     print("-------------------------------------------------------")
