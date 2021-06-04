@@ -49,7 +49,7 @@ sandwich = [
                 'name': 'Pimentón'
             },
             {
-                'name': 'Doble Queso'
+                'name': 'Doble queso'
             },
             {
                 'name': 'Aceitunas'
