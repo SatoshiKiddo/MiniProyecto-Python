@@ -1,3 +1,4 @@
+#coding=utf-8
 from logic import Sandwich
 from PyInquirer import prompt
 from os import system
@@ -154,7 +155,7 @@ while True:
     sandwichCounter += 1
     print()
     print("-------------------------------------------------------")
-    print(f"|                  SANDWICH NUMERO {sandwichCounter}                  |")
+    printf("|                  SANDWICH NUMERO ",sandwichCounter,"                  |")
     print("-------------------------------------------------------")
     print("Opciones:")
     print("Tamaños: Triple ( t ) Doble ( d ) Individual ( i ):")
@@ -166,10 +167,10 @@ while True:
 
     print()
     system("cls")
-    print(f"Usted eligio un sandiwch {newSandwich.tipo} con queso.")
+    printf("Usted eligio un sandiwch ",newSandwich.tipo," con queso.")
     if ingredients:
-        print(f"Aparte se ha añadido:", *ingredients, sep=",")
-    print(f"el subtotal por este sandwich es: {newSandwich.getPrice()}")
+        printf("Aparte se ha añadido:", *ingredients, sep=",")
+    printf("el subtotal por este sandwich es: ",newSandwich.getPrice())
     sandwichList.append(newSandwich)
 
     print("-------------------------------------------------------")
@@ -229,8 +230,8 @@ system("cls")
 print("-------------------------------------------------------")
 print("|                  SANDWICHES UCAB                    |")
 print("-------------------------------------------------------")
-print(f"No. de sandwiches {sandwichCounter}")
-print(f"Descuento {cuponPropertys['porcentaje']}%")
-print(f"Cobro adicional por empaque para delivery.......${empaque}")
-print(f"Monto sin descuentos ni adicionales ............${totalSinAdicionales}")
-print(f"Monto total ....................................${total}")
+printf("No. de sandwiches ",sandwichCounter)
+printf("Descuento ",cuponPropertys['porcentaje'],"%")
+printf("Cobro adicional por empaque para delivery.......$",empaque)
+printf("Monto sin descuentos ni adicionales ............$",totalSinAdicionales)
+printf("Monto total ....................................$",total)
